@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="nav">
             <div class="small_screen_header">
                 <h3>Xtarachiever</h3>
                 <nav class="navbar" id="navbar">
@@ -20,12 +20,12 @@
             </div>
             <div class="nav-content hidden" id="nav-content">
                 <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Projects</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
             </div>
         </header>
         <div class="sections">
-            <div class="first_section">
+            <div class="first_section" id="about">
                 <section>
                     <h1>FrontEnd Developer, <br/> creating a responsive, <br/> interactive interfaces</h1>
                 </section>
@@ -45,7 +45,7 @@
             <div class="second_section">
                 <h3>Featured Projects</h3>
                 <p>A collection of past projects:</p>
-                <div class="projects">
+                <div class="projects" id="projects">
                     <div class="eachProject">
                         <img src="./images/todolist.webp"/> 
                         <div class="details">
@@ -81,8 +81,9 @@
                 <ul>
                     <li>ReactJS</li>
                     <li>Javascript</li>
-                    <li>CSS, Sass</li>
-                    <li>TypeScript</li>
+                    <li>HTML</li>
+                    <li>CSS, Tailwindcss</li>
+                    <li>Sass</li>
                 </ul>
             </div>
         </div>

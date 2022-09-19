@@ -6,10 +6,12 @@
 .container {
     background-color: #030303;
     color: #fcfcfc;
-    padding: 20px;
     height: 100%;
     min-height: 100vh;
     min-width: 420px;
+    max-width: 1440px;
+    overflow: hidden;
+    padding-bottom: 20px;
 }
 a{
     text-decoration: none;
@@ -22,12 +24,28 @@ a:hover{
 .nav-content a{
     color: #fcfcfc;
 }
+.container::after{
+    clear: both;
+    content: "";
+    display: table;
+}
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    top: 0;
+    padding: 10px 0px;
+    box-shadow: 0px 1px 5px #585050;
+}
+.small_screen_header,
+.nav-content{
+    padding: 0px 15px;
 }
 header .nav-content{
+    position: relative;
     width: 45%;
     display: flex;
     justify-content: space-between;
@@ -37,7 +55,7 @@ header .nav-content{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
+    padding-top: 60px;
     flex-direction: column;
 }
 .container .sections .first_section,
@@ -67,32 +85,37 @@ header .nav-content{
 .container .sections .second_section .projects{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 145px;
-    grid-gap: 20px;
+    grid-auto-rows: 130px;
+    gap: 70px;
+    margin-bottom: 70px;
     margin-top: 30px;
-    justify-items: center;
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
 }
 .container .sections .second_section .projects .eachProject{
     width: 100%;
-    box-shadow: 0 1px 2px #a1a1a1;
-    margin-bottom: 50px;
-    padding:20px;
-    min-width: 300px;
-    max-width: 400px;
+    padding:20px 0px;
+    min-width: 200px;
+    padding-left: 20px;
+    max-width: 100%;
     display: flex;
     align-items:center;
     justify-content: center;
+    height: 100%;
+    border: 1px solid #757474;
+}
+.container .sections .second_section .projects .eachProject:hover{
+    box-shadow: 0px 1px 12px #757474;
 }
 .container .sections .second_section .projects .eachProject p{
     color: #fcfcfc;
 }
 .container .sections .second_section .projects .eachProject .details{
-    padding-left: 10px;
+    padding: 10px;
 }
 .container .sections .second_section .projects .eachProject img{
-    width: 100px;
-    height: 100px;
+    width: 20%;
+    height: 60%;
     object-fit: cover;
     
 }
@@ -105,9 +128,10 @@ header .nav-content{
 }
 .container .sections .skills ul{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 20px;
-    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 20px 0px 0px 10px;
+    gap: 10px;
+    justify-items: start;
 }
 @media screen and (max-width:1000px){
     .container .sections .second_section .projects{
@@ -125,19 +149,27 @@ header .nav-content{
         align-items: center;
         width: 100%;
     }
+    .small-screen{
+        padding-top: 120px !important;
+    }
     header .nav-content{
         display: flex;
         position: absolute;
-        top: 80px;
+        top: 40px;
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-evenly;
         background-color: #030303;
         padding-bottom: 30px;
+        padding: 20px;
+        box-shadow: 0px 1px 5px #585050;
     }
     .nav-content.hidden{
         display: none;
     }
     .small_screen_header nav{
         display: block;
+    }
+    .container .sections .skills ul{
+        grid-template-columns:1fr 1fr;
     }
 }
